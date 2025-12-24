@@ -1,0 +1,331 @@
+/* ===============================
+   2. HEADER WRAPPER
+   =============================== */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 56px;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+/* ===============================
+   3. LOGO SECTION
+   =============================== */
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo svg {
+  color: #000000d7;
+}
+
+/* ===============================
+   4. CENTER NAV MENU
+   =============================== */
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: rgba(0, 0, 0, 0.76);
+  transition: background 0.2s ease;
+}
+
+.menu a:hover {
+  background-color: #00000018;
+}
+
+/* ===============================
+   5. HEADER ACTION ICONS
+   =============================== */
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.actions a {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18%;
+  transition: background 0.2s ease;
+}
+
+.actions a:hover {
+  background-color: #00000018;
+}
+
+.actions svg {
+  width: 24px;
+  height: 24px;
+  color: #000000e0;
+}
+
+/* ===============================
+   6. MOBILE MENU BUTTON
+   =============================== */
+
+.menu-toggle {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 7.5px 14px;
+  border-radius: 5px;
+  color: #000000e0;
+  cursor: pointer;
+  display: none;
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  background: #00000010;
+}
+
+.menu-toggle:hover {
+  background: #00000014;
+}
+
+/* ===============================
+   7. HEADER RESPONSIVE
+   =============================== */
+
+@media (max-width: 1200px) {
+  .menu,
+  .actions {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    padding: 0 12px;
+  }
+
+  .logo svg {
+  color: #000000e0;
+  }
+
+  .menu-toggle {
+  color: #000000e0;
+  }
+    .your-text {
+    display: none;
+  }
+
+  .send svg {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  header{
+    background: transparent;
+  }
+    .logo svg {
+  color: white;
+  }
+
+  .menu-toggle {
+  color: white;
+  }
+ 
+  .text p{
+    display: none;
+  }
+
+  .book-drive{
+    width: 485px;
+  }
+}
+
+@media (max-width: 550px) {
+  .book-drive{
+    width: 415px;
+  }
+}
+
+/* ===============================
+   8. FIXED BOTTOM BAR
+   =============================== */
+
+.fixed-box {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 56px;
+  background: #fff;
+  border-top: 1px solid #e5e5e5;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  padding: 6.5px 200px;
+  justify-content: center;
+}
+
+.fixed-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ===============================
+   9. QUERY / SEARCH BOX
+   =============================== */
+
+.query-box {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #5c5e62;
+}
+
+/* ===============================
+   10. INPUT FIELD
+   =============================== */
+
+.your-text {
+  width: 14rem;
+}
+
+.placeholder {
+  flex: 1;
+  width: 100%;
+  /* width: 14rem; */
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #171a20;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.placeholder::placeholder {
+  color: #5c5e62;
+  opacity: 1;
+  text-align: left;
+}
+
+.placeholder:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* ===============================
+   11. ICONS (LEFT & SEND)
+   =============================== */
+
+.icon,
+.send {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon {
+  margin-left: 10px;
+  margin-right: -10px;
+}
+
+.send {
+  margin-right: 8px;
+  margin-left: -8px;
+}
+
+.send svg {
+  border-radius: 4px;
+  background-color: #00000028;
+  color: white;
+}
+
+.send svg:hover {
+  background-color: #00000033;
+}
+
+/* ===============================
+   12. BOOK DRIVE BUTTON
+   =============================== */
+
+.book-drive {
+  overflow: hidden;
+  height: 100%;
+  padding: 0 18px;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000000c9;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.book-drive span {
+  margin-left: 8px;
+}
+
+.wheel-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-right: 8px; */
+  /* margin-left: -10px; */
+  height: 25px;
+  width: 25px;
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.wheel-icon img {
+  height: 100%;
+  width: 100%;
+}
+
+/* ===============================
+   13. TEXT LABELS
+   =============================== */
+
+.text {
+  font-weight: bold;
+  color: #000000c9;
+  display: flex;
+  align-items: baseline;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.text p {
+  margin-left: 10px;
+}

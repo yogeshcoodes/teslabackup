@@ -1,0 +1,32 @@
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Google Sans", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.4s;
+}
+
+/* Remove tap highlight (mobile) */
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* Remove ugly focus outlines (Tesla style) */
+a:focus,
+a:visited,
+a:active {
+  outline: none;
+}
+
+body{
+  height: 100%;
+  width: 100%;
+  /* overflow: hidden; */
+}
+
