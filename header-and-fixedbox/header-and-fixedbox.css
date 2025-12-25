@@ -309,7 +309,7 @@ input.placeholder {
 .book-drive {
   height: 100%;
   padding: 0 18px;
-
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;

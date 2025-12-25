@@ -90,6 +90,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0 40px;
+  z-index: 2;
 }
 
 .hero-btn button {
@@ -109,6 +110,7 @@
   display: flex;
   justify-content: center;
   gap: 8px;
+  z-index: 2;
 }
 
 .owlcarosal button {
@@ -123,7 +125,7 @@
 
 @media (max-width: 768px) {
   .img-container {
-    height: 82vh;
+    height: 80vh;
   }
 
   .model-info h1 {
@@ -148,9 +150,13 @@
   .img-container {
     position: absolute;
     top: 0;
-    left: 0;
   }
+  
   .model-info h1 {
     font-size: 2rem;
   }
+  
 }
+
+
+    
