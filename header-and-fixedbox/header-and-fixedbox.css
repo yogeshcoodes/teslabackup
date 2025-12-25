@@ -168,17 +168,15 @@ header {
 }
 
 /* ===============================
-   8. FIXED BOTTOM BAR (REPAIRED)
+   8. FIXED FOOTER BAR
    =============================== */
 
 .fixed-box {
   position: fixed;
   bottom: 0;
   left: 0;
-
   width: 100%;
   height: 56px;
-
   background: #fff;
   border-top: 1px solid #e5e5e5;
   z-index: 999;
@@ -194,16 +192,175 @@ header {
   width: 100%;
   max-width: 1280px;
 
-  /* SAME desktop visual spacing */
+  /* desktop pixel-perfect spacing */
   padding: 0 200px;
 
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 16px;
+
+  box-sizing: border-box;
 }
 
-/* Mobile safety (ONLY footer) */
+/* ===============================
+   QUERY / SEARCH BOX
+   =============================== */
+
+.query-box {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  align-content: center;
+  justify-content: flex-start;
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+
+  font-size: 14px;
+  color: #5c5e62;
+
+  min-width: 0;
+}
+
+.your-text {
+  /* width: 14rem; */
+  min-width: 0;
+}
+
+.text p {
+  cursor: pointer;
+}
+
+.placeholder {
+  max-width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: bold;
+  color: #171a20;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+input.placeholder {
+  width: 100%;
+    width: 14rem;
+
+}
+
+.placeholder::placeholder {
+  color: #5c5e62;
+  opacity: 1;
+  text-align: left;
+}
+
+/* ===============================
+   ICONS
+   =============================== */
+
+.icon,
+.send {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.icon {
+  margin-left: 10px;
+  margin-right: -10px;
+}
+
+.send {
+  margin-right: 8px;
+}
+
+.send svg {
+  border-radius: 4px;
+  background-color: #00000028;
+  color: #fff;
+}
+
+.send svg:hover {
+  background-color: #00000033;
+}
+
+/* ===============================
+   BOOK DRIVE BUTTON
+   =============================== */
+
+.book-drive {
+  height: 100%;
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+
+  font-size: 14px;
+  font-weight: bold;
+  color: #000000c9;
+
+  white-space: nowrap;
+  cursor: pointer;
+
+  flex-shrink: 0;
+  max-width: 100%;
+}
+
+.book-drive span {
+  margin-left: 8px;
+}
+
+.wheel-icon {
+  height: 25px;
+  width: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.wheel-icon img {
+  width: 25px;
+  height: 25px;
+}
+
+/* ===============================
+   TEXT LABEL
+   =============================== */
+
+.text {
+  font-weight: bold;
+  color: #000000c9;
+  display: flex;
+  align-items: baseline;
+  white-space: nowrap;
+}
+
+.text p {
+  margin-left: 10px;
+}
+
+/* ===============================
+   RESPONSIVE (SMART, NO JITTER)
+   =============================== */
+
+@media (max-width: 1180px) {
+  .fixed-inner {
+    padding: 0 24px;
+  }
+}
+
 @media (max-width: 900px) {
   .fixed-inner {
     padding: 0 24px;
@@ -216,161 +373,14 @@ header {
   }
 
   .book-drive {
-    width: 485px;
+    width: 415px;
+    max-width: 90%;
   }
 }
 
 @media (max-width: 550px) {
   .book-drive {
     width: 415px;
+    max-width: 90%;
   }
-}
-
-/* ===============================
-   9. QUERY / SEARCH BOX
-   =============================== */
-
-.query-box {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  border: 1px solid #d0d0d0;
-  border-radius: 5px;
-
-  font-size: 14px;
-  color: #5c5e62;
-}
-
-/* ===============================
-   10. INPUT FIELD
-   =============================== */
-
-.your-text {
-  width: 14rem;
-}
-
-.placeholder {
-  flex: 1;
-  width: 100%;
-
-  border: none;
-  outline: none;
-  background: transparent;
-
-  font-size: 14px;
-  font-weight: bold;
-  color: #171a20;
-
-  display: flex;
-  align-items: center;
-}
-
-.placeholder::placeholder {
-  color: #5c5e62;
-  opacity: 1;
-  text-align: left;
-}
-
-.placeholder:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-/* ===============================
-   11. ICONS (LEFT & SEND)
-   =============================== */
-
-.icon,
-.send {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.icon {
-  margin-left: 10px;
-  margin-right: -10px;
-}
-
-.send {
-  margin-right: 8px;
-  margin-left: -8px;
-}
-
-.send svg {
-  border-radius: 4px;
-  background-color: #00000028;
-  color: white;
-}
-
-.send svg:hover {
-  background-color: #00000033;
-}
-
-/* ===============================
-   12. BOOK DRIVE BUTTON
-   =============================== */
-
-.book-drive {
-  height: 100%;
-  padding: 0 18px;
-  /* width: 220px; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  flex-shrink: 0;
-  border: 1px solid #d0d0d0;
-  border-radius: 5px;
-
-  font-size: 14px;
-  font-weight: bold;
-  color: #000000c9;
-
-  white-space: nowrap;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.book-drive span {
-  margin-left: 8px;
-}
-
-.wheel-icon {
-  height: 25px;
-  width: 25px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-left: -8px;
-  margin-right: -8px;
-}
-
-.wheel-icon img {
-  width: 25px;
-  height: 25px;
-}
-
-/* ===============================
-   13. TEXT LABELS
-   =============================== */
-
-.text {
-  font-weight: bold;
-  color: #000000c9;
-
-  display: flex;
-  align-items: baseline;
-  text-align: left;
-  white-space: nowrap;
-}
-
-.text p {
-  margin-left: 10px;
 }

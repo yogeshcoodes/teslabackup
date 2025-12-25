@@ -3,7 +3,7 @@
 .img-container {
   position: relative;
   width: 100%;
-  height: 70vh; /* better than % */
+  height: 70vh;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -21,7 +21,7 @@
 
 .model-info {
   position: absolute;
-  top: 10%;
+  top: 12.5%;
   width: 100%;
   text-align: center;
   display: flex;
@@ -33,11 +33,13 @@
   font-size: 3rem;
   color: #fff;
   font-weight: bold;
+  white-space: none;
 }
 
 .model-info p {
   font-size: 1rem;
   color: #fff;
+  white-space: none;
 }
 
 /* ================= BUTTON BAND ================= */
@@ -49,6 +51,7 @@
   display: flex;
   justify-content: center;
   gap: 8px;
+  padding: 5px;
 }
 
 .band button {
@@ -81,7 +84,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 0 40px; /* 🔥 gap remove */
+  padding: 0 40px;
 }
 
 .hero-btn button {
@@ -122,11 +125,12 @@
   }
 
   .band {
-    top: 25%;
+    top: 28.8%;
   }
 
   .band button {
     width: 222px;
+    max-width: 90%;
   }
 
   .hero-btn {
