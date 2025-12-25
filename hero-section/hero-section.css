@@ -24,7 +24,7 @@
   gap: 2px;
 }
 
-.model-info h {
+.model-info h1 {
   font-size: 3rem;
   color: white;
   display: flex;
@@ -48,7 +48,6 @@
   top: 30%;
   gap: 8px;
   width: 100%;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
