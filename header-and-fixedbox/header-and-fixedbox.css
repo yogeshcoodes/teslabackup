@@ -103,7 +103,7 @@ header {
 }
 
 /* ===============================
-   7. HEADER RESPONSIVE
+   MEDIA QUERIES (UNCHANGED)
    =============================== */
 
 @media (max-width: 1200px) {
@@ -123,13 +123,14 @@ header {
   }
 
   .logo svg {
-  color: #000000e0;
+    color: #000000e0;
   }
 
   .menu-toggle {
-  color: #000000e0;
+    color: #000000e0;
   }
-    .your-text {
+
+  .your-text {
     display: none;
   }
 
@@ -139,55 +140,90 @@ header {
 }
 
 @media (max-width: 600px) {
-  header{
+  header {
     background: transparent;
   }
-    .logo svg {
-  color: white;
+
+  .logo svg {
+    color: white;
   }
 
   .menu-toggle {
-  color: white;
+    color: white;
   }
- 
-  .text p{
+
+  .text p {
     display: none;
   }
 
-  .book-drive{
+  .book-drive {
     width: 485px;
   }
 }
 
 @media (max-width: 550px) {
-  .book-drive{
+  .book-drive {
     width: 415px;
   }
 }
 
 /* ===============================
-   8. FIXED BOTTOM BAR
+   8. FIXED BOTTOM BAR (REPAIRED)
    =============================== */
 
 .fixed-box {
   position: fixed;
   bottom: 0;
+  left: 0;
+
   width: 100%;
   height: 56px;
+
   background: #fff;
   border-top: 1px solid #e5e5e5;
   z-index: 999;
+
   display: flex;
   align-items: center;
-  padding: 6.5px 200px;
   justify-content: center;
+  padding: 6.5px 0;
 }
 
 .fixed-inner {
   height: 100%;
+  width: 100%;
+  max-width: 1280px;
+
+  /* SAME desktop visual spacing */
+  padding: 0 200px;
+
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 16px;
+}
+
+/* Mobile safety (ONLY footer) */
+@media (max-width: 900px) {
+  .fixed-inner {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .fixed-inner {
+    padding: 0 12px;
+  }
+
+  .book-drive {
+    width: 485px;
+  }
+}
+
+@media (max-width: 550px) {
+  .book-drive {
+    width: 415px;
+  }
 }
 
 /* ===============================
@@ -200,8 +236,10 @@ header {
   align-items: center;
   justify-content: center;
   gap: 10px;
+
   border: 1px solid #d0d0d0;
   border-radius: 5px;
+
   font-size: 14px;
   color: #5c5e62;
 }
@@ -217,13 +255,15 @@ header {
 .placeholder {
   flex: 1;
   width: 100%;
-  /* width: 14rem; */
+
   border: none;
   outline: none;
   background: transparent;
+
   font-size: 14px;
-  color: #171a20;
   font-weight: bold;
+  color: #171a20;
+
   display: flex;
   align-items: center;
 }
@@ -276,20 +316,24 @@ header {
    =============================== */
 
 .book-drive {
-  overflow: hidden;
   height: 100%;
   padding: 0 18px;
-  gap: 10px;
+  /* width: 220px; */
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
+  flex-shrink: 0;
   border: 1px solid #d0d0d0;
   border-radius: 5px;
+
   font-size: 14px;
   font-weight: bold;
   color: #000000c9;
+
   white-space: nowrap;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .book-drive span {
@@ -297,20 +341,20 @@ header {
 }
 
 .wheel-icon {
+  height: 25px;
+  width: 25px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  /* margin-right: 8px; */
-  /* margin-left: -10px; */
-  height: 25px;
-  width: 25px;
+
   margin-left: -8px;
   margin-right: -8px;
 }
 
 .wheel-icon img {
-  height: 100%;
-  width: 100%;
+  width: 25px;
+  height: 25px;
 }
 
 /* ===============================
@@ -320,6 +364,7 @@ header {
 .text {
   font-weight: bold;
   color: #000000c9;
+
   display: flex;
   align-items: baseline;
   text-align: left;
