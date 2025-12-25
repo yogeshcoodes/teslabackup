@@ -5,7 +5,7 @@
   box-sizing: border-box;
   font-family: "Google Sans", sans-serif;
   -webkit-tap-highlight-color: transparent;
-  transition: all 0.4s;
+  transition: all 0.2s;
 }
 
 /* Remove tap highlight (mobile) */

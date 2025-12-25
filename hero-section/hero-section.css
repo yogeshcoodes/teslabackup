@@ -48,12 +48,17 @@
   position: absolute;
   top: 30%;
   gap: 8px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .band button {
   outline: none;
   border: none;
   width: 180px;
+  /* width: auto; */
   height: 38px;
   border-radius: 4px;
   outline: 1px solid rgba(0, 0, 0, 0.012);
@@ -153,5 +158,11 @@ button.view-inv-btn:hover {
 @media (max-width: 550px) {
     .band button {
      width: 220px;
+  }
+}
+
+@media (max-width: 500px) {
+    .band button {
+     width: 200px;
   }
 }
