@@ -1,0 +1,15 @@
+.models-section-wrap{
+  border: 2px solid red;
+  width: 100%;
+  min-height: 90vh;
+  position: relative;
+  z-index: 5;
+  top: 6.5vh;
+}
+
+@media (max-width: 600px) {
+    .models-section-wrap{
+          top: -5vh;
+
+    }
+}
