@@ -1,0 +1,25 @@
+# Tesla Website Clone
+This is a front-end Tesla clone website built using **HTML, CSS, and Vanilla JavaScript**.
+This project focuses on responsive design, modular structure, and clean UI implementation without using external frameworks.
+
+
+## Tech Stack
+* HTML5
+* CSS3
+* JavaScript (Vanilla)
+
+
+## Key Highlights
+* Responsive layout
+* Modular folder-based architecture
+* Dynamic section loading using Fetch API
+* Clean and maintainable codebase
+
+
+## Purpose
+Created to strengthen front-end fundamentals and practice real-world website structure using core web technologies.
+
+
+## Disclaimer
+This project is for educational purposes only.
+All design references and brand assets belong to Tesla, Inc.
