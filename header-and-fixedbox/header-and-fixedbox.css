@@ -3,7 +3,7 @@
    =============================== */
 
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1000;
   height: 56px;
@@ -115,20 +115,6 @@ header {
   .menu-toggle {
     display: flex;
   }
-}
-
-@media (max-width: 700px) {
-  header {
-    padding: 0 15px;
-  }
-
-  .logo svg {
-    color: #000000e0;
-  }
-
-  .menu-toggle {
-    color: #000000e0;
-  }
 
   .your-text {
     display: none;
@@ -137,10 +123,33 @@ header {
   .send svg {
     display: none;
   }
+
+  .query-box {
+    flex: 0 0 240px;
+  }
+
+  .book-drive {
+    flex: 0 0 240px;
+  }
+
+  @media (max-width: 700px) {
+    header {
+      padding: 0 15px;
+    }
+
+    .logo svg {
+      color: #000000e0;
+    }
+
+    .menu-toggle {
+      color: #000000e0;
+    }
+  }
 }
 
 @media (max-width: 600px) {
   header {
+    position: sticky;
     background: transparent;
   }
 
@@ -161,7 +170,7 @@ header {
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
   .book-drive {
     width: 415px;
   }
@@ -422,5 +431,31 @@ input.placeholder {
   .query-box .your-text,
   .query-box .send {
     display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .query-box {
+    width: 50px;
+    max-width: 50px;
+
+    gap: 0;
+    padding: 0;
+    flex-shrink: 0;
+  }
+  .query-box .text,
+  .query-box .your-text,
+  .query-box .send {
+    display: none;
+  }
+  .query-box {
+    justify-content: flex-start;
+    padding: 0;
+    gap: 0;
+  }
+
+  .book-drive {
+    max-width: 100%;
+    flex: 0 0 400px;
   }
 }

@@ -2,62 +2,68 @@
 
 .img-container {
   position: relative;
-  bottom: 0vh;
   width: 100%;
-  height: 72.58vh;
+  height: 80vh;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 8px;
 }
 
 .img-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  object-fit: cover; /* SAME */
+  object-position: center; /* SAME */
 }
 
 /* ================= MODEL INFO ================= */
 
-.model-info {
+.model-info-top {
   position: absolute;
-  top: 12.5%;
+  top: 15%;
   width: 100%;
+
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
-.model-info h1 {
-  font-size: 3rem;
+.model-info-top h1 {
+  font-size: 3.5rem;
   color: #fff;
   font-weight: bold;
-  white-space: none;
+  white-space: normal;
 }
 
-.model-info p {
-  font-size: 1rem;
+.model-info-top p {
+  font-size: 0.95rem;
   color: #fff;
-  white-space: none;
+  white-space: normal;
+  /* CHANGE: same fix */
 }
 
 /* ================= BUTTON BAND ================= */
 
 .band {
   position: absolute;
+
   top: 30%;
   width: 100%;
+
   display: flex;
   justify-content: center;
   gap: 8px;
   padding: 16.5px;
+  /* border: 2px solid red; */
 }
 
 .band button {
-  width: 180px;
+  width: 195px;
   height: 40px;
+
   border-radius: 4px;
   border: none;
   font-weight: bold;
@@ -74,7 +80,7 @@
 }
 
 .view-inv-btn {
-  background-color: white;
+  background-color: #ffffff;
   color: #000000d7;
 }
 
@@ -86,8 +92,9 @@
 
 .hero-btn {
   position: absolute;
-  top: 50%;
+  top: 50%; /* SAME */
   width: 100%;
+
   display: flex;
   justify-content: space-between;
   padding: 0 40px;
@@ -97,6 +104,7 @@
 .hero-btn button {
   width: 40px;
   height: 40px;
+
   border-radius: 4px;
   border: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
@@ -106,8 +114,9 @@
 
 .owlcarosal {
   position: absolute;
-  bottom: 16px;
+  bottom: 16px; /* SAME */
   width: 100%;
+
   display: flex;
   justify-content: center;
   gap: 8px;
@@ -117,47 +126,55 @@
 .owlcarosal button {
   width: 12px;
   height: 12px;
+
   border-radius: 50%;
   border: none;
-  outline: 1px solid rgba(0, 0, 0, 0.011);
+  outline: 1px solid rgba(0, 0, 0, 0.01);
+  /* CHANGE: 0.011 → clean 0.01 */
 }
 
 /* ================= RESPONSIVE ================= */
 
-@media (max-width: 768px) {
-  .img-container {
-    height: 81vh;
-  }
-
-  .model-info h1 {
-    font-size: 2.5rem;
-  }
-
-  .band {
-    top: 26%;
-  }
-
-  .band button {
-    width: 222px;
-    max-width: 90%;
-  }
-
+@media (max-width: 1200px) {
   .hero-btn {
     display: none;
   }
 }
 
-@media (max-width: 600px) {
-  .img-container {
-    position: relative;
-    top: -8.5vh;
+@media (max-width: 770px) {
+  .band {
+    top: 34%;
   }
-  
-  .model-info h1 {
-    font-size: 2.2rem;
+
+  .band button {
+    width: 242px;
+    max-width: 90%;
   }
-  
 }
 
+@media (max-width: 598px) {
+  .img-container {
+    margin-top: -56px;
+    margin-bottom: 8px;
+    height: calc(72.58vh + 56px);
+    height: 82vh;
+  }
 
-    
+  .img-container img {
+    object-position: top center;
+  }
+
+  .model-info-top h1{
+    font-size: 2rem;
+  }
+}
+
+/* Order Now button color + hover */
+.btn-row .order{
+  background: #3e6ae1;
+  color: #fff;
+}
+
+.btn-row .order:hover{
+  background: #3457b1;
+}
