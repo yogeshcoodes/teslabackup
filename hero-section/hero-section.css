@@ -125,7 +125,7 @@
 
 @media (max-width: 768px) {
   .img-container {
-    height: 80vh;
+    height: 82vh;
   }
 
   .model-info h1 {
@@ -133,7 +133,7 @@
   }
 
   .band {
-    top: 28.8%;
+    top: 26%;
   }
 
   .band button {
@@ -153,7 +153,7 @@
   }
   
   .model-info h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   
 }
