@@ -24,7 +24,6 @@
   position: absolute;
   top: 15%;
   width: 100%;
-
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -42,7 +41,6 @@
   font-size: 0.95rem;
   color: #fff;
   white-space: normal;
-  /* CHANGE: same fix */
 }
 
 /* ================= BUTTON BAND ================= */

@@ -24,6 +24,7 @@
   min-width: 76.8vw;
   flex-shrink: 0;
   /* border: 2px solid green; */
+  user-select: none;
   border-radius: 8px;
 }
 

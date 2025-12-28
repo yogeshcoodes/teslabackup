@@ -459,3 +459,10 @@ input.placeholder {
     flex: 0 0 400px;
   }
 }
+
+/* This has to be deactivated in future */
+@media (max-width: 1500px) {
+  .fixed-box {
+  display: none;
+  }
+}

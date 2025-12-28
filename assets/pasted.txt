@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dual Carousel System</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      user-select: none;
+      background: #0f0f0f;
+      font-family: Arial, sans-serif;
+      padding: 40px 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      color: #fff;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    .carousel-section {
+      margin-bottom: 80px;
+    }
+
+    /* ========== FADE CAROUSEL ========== */
+    .fade-carousel {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .fade-slides {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .fade-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .fade-slide.active {
+      opacity: 1;
+    }
+
+    .dots {
+      margin-top: 18px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ffffff;
+      opacity: 0.6;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+
+    .dot.active {
+      opacity: 1;
+      background: #f1f1f1;
+    }
+
+    /* ========== SLIDE CAROUSEL ========== */
+    .slide-carousel {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .slide-carousel-wrapper {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .slide-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      height: 100%;
+    }
+
+    .slide-item {
+      min-width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .nav-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.3);
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: #fff;
+      transition: background 0.3s ease;
+      z-index: 10;
+    }
+
+    .nav-arrow:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .nav-arrow.left {
+      left: 20px;
+    }
+
+    .nav-arrow.right {
+      right: 20px;
+    }
+
+    .slide-dots {
+      margin-top: 18px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .slide-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ffffff;
+      opacity: 0.6;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+
+    .slide-dot.active {
+      opacity: 1;
+      background: #f1f1f1;
+    }
+
+    @media (max-width: 600px) {
+      .fade-slides,
+      .slide-carousel-wrapper {
+        height: 400px;
+      }
+
+      .fade-slide,
+      .slide-item {
+        font-size: 32px;
+      }
+
+      .nav-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+      }
+
+      .nav-arrow.left {
+        left: 10px;
+      }
+
+      .nav-arrow.right {
+        right: 10px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- FADE CAROUSEL -->
+    <div class="carousel-section">
+      <h2>Fade Carousel</h2>
+      <div class="fade-carousel">
+        <div class="fade-slides">
+          <div class="fade-slide active" style="background: #ff4d4d">Slide 1</div>
+          <div class="fade-slide" style="background: #4d79ff">Slide 2</div>
+          <div class="fade-slide" style="background: #4dff88">Slide 3</div>
+          <div class="fade-slide" style="background: #ffb84d">Slide 4</div>
+        </div>
+        <div class="dots" id="fade-dots">
+          <span class="dot active" data-slide="0"></span>
+          <span class="dot" data-slide="1"></span>
+          <span class="dot" data-slide="2"></span>
+          <span class="dot" data-slide="3"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE CAROUSEL -->
+    <div class="carousel-section">
+      <h2>Slide Carousel</h2>
+      <div class="slide-carousel">
+        <div class="slide-carousel-wrapper">
+          <button class="nav-arrow left" id="prevBtn">‹</button>
+          <div class="slide-track" id="slideTrack">
+            <div class="slide-item" style="background: #9b59b6">Slide 1</div>
+            <div class="slide-item" style="background: #e74c3c">Slide 2</div>
+            <div class="slide-item" style="background: #3498db">Slide 3</div>
+            <div class="slide-item" style="background: #2ecc71">Slide 4</div>
+            <div class="slide-item" style="background: #f39c12">Slide 5</div>
+          </div>
+          <button class="nav-arrow right" id="nextBtn">›</button>
+        </div>
+        <div class="slide-dots" id="slide-dots">
+          <span class="slide-dot active" data-slide="0"></span>
+          <span class="slide-dot" data-slide="1"></span>
+          <span class="slide-dot" data-slide="2"></span>
+          <span class="slide-dot" data-slide="3"></span>
+          <span class="slide-dot" data-slide="4"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ========== FADE CAROUSEL ==========
+    const fadeSlides = document.querySelectorAll(".fade-slide");
+    const fadeDots = document.querySelectorAll("#fade-dots .dot");
+    const fadeSlider = document.querySelector(".fade-slides");
+
+    let fadeCurrent = 0;
+    let fadeInterval = 3000;
+    let fadeTimer = null;
+    let fadeHoldTimer = null;
+    let fadeIsPaused = false;
+
+    function showFadeSlide(index) {
+      fadeSlides.forEach((s) => s.classList.remove("active"));
+      fadeDots.forEach((d) => d.classList.remove("active"));
+
+      fadeSlides[index].classList.add("active");
+      fadeDots[index].classList.add("active");
+      fadeCurrent = index;
+    }
+
+    function startFadeAutoPlay() {
+      if (fadeTimer || fadeIsPaused) return;
+      fadeTimer = setInterval(() => {
+        showFadeSlide((fadeCurrent + 1) % fadeSlides.length);
+      }, fadeInterval);
+    }
+
+    function stopFadeAutoPlay() {
+      clearInterval(fadeTimer);
+      fadeTimer = null;
+    }
+
+    fadeDots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        showFadeSlide(+dot.dataset.slide);
+        stopFadeAutoPlay();
+        startFadeAutoPlay();
+      });
+    });
+
+    let fadeStartX = 0;
+
+    fadeSlider.addEventListener("touchstart", (e) => {
+      fadeStartX = e.touches[0].clientX;
+      fadeHoldTimer = setTimeout(() => {
+        fadeIsPaused = true;
+        stopFadeAutoPlay();
+      }, 2000);
+    });
+
+    fadeSlider.addEventListener("touchend", (e) => {
+      clearTimeout(fadeHoldTimer);
+      let endX = e.changedTouches[0].clientX;
+      let diff = fadeStartX - endX;
+
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) {
+          showFadeSlide((fadeCurrent + 1) % fadeSlides.length);
+        } else {
+          showFadeSlide((fadeCurrent - 1 + fadeSlides.length) % fadeSlides.length);
+        }
+      }
+
+      fadeIsPaused = false;
+      startFadeAutoPlay();
+    });
+
+    fadeSlider.addEventListener("mouseenter", () => {
+      fadeHoldTimer = setTimeout(() => {
+        fadeIsPaused = true;
+        stopFadeAutoPlay();
+      }, 2000);
+    });
+
+    fadeSlider.addEventListener("mouseleave", () => {
+      clearTimeout(fadeHoldTimer);
+      fadeIsPaused = false;
+      startFadeAutoPlay();
+    });
+
+    startFadeAutoPlay();
+
+    // ========== SLIDE CAROUSEL ==========
+    const slideTrack = document.getElementById("slideTrack");
+    const slideItems = document.querySelectorAll(".slide-item");
+    const slideDots = document.querySelectorAll("#slide-dots .slide-dot");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const slideWrapper = document.querySelector(".slide-carousel-wrapper");
+
+    let slideCurrent = 0;
+    let slideInterval = 3000;
+    let slideTimer = null;
+    let slideHoldTimer = null;
+    let slideIsPaused = false;
+
+    function showSlideItem(index) {
+      slideTrack.style.transform = `translateX(-${index * 100}%)`;
+      slideDots.forEach((d) => d.classList.remove("active"));
+      slideDots[index].classList.add("active");
+      slideCurrent = index;
+    }
+
+    function startSlideAutoPlay() {
+      if (slideTimer || slideIsPaused) return;
+      slideTimer = setInterval(() => {
+        showSlideItem((slideCurrent + 1) % slideItems.length);
+      }, slideInterval);
+    }
+
+    function stopSlideAutoPlay() {
+      clearInterval(slideTimer);
+      slideTimer = null;
+    }
+
+    prevBtn.addEventListener("click", () => {
+      showSlideItem((slideCurrent - 1 + slideItems.length) % slideItems.length);
+      stopSlideAutoPlay();
+      startSlideAutoPlay();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      showSlideItem((slideCurrent + 1) % slideItems.length);
+      stopSlideAutoPlay();
+      startSlideAutoPlay();
+    });
+
+    slideDots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        showSlideItem(+dot.dataset.slide);
+        stopSlideAutoPlay();
+        startSlideAutoPlay();
+      });
+    });
+
+    let slideStartX = 0;
+
+    slideWrapper.addEventListener("touchstart", (e) => {
+      slideStartX = e.touches[0].clientX;
+      slideHoldTimer = setTimeout(() => {
+        slideIsPaused = true;
+        stopSlideAutoPlay();
+      }, 2000);
+    });
+
+    slideWrapper.addEventListener("touchend", (e) => {
+      clearTimeout(slideHoldTimer);
+      let endX = e.changedTouches[0].clientX;
+      let diff = slideStartX - endX;
+
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) {
+          showSlideItem((slideCurrent + 1) % slideItems.length);
+        } else {
+          showSlideItem((slideCurrent - 1 + slideItems.length) % slideItems.length);
+        }
+      }
+
+      slideIsPaused = false;
+      startSlideAutoPlay();
+    });
+
+    slideWrapper.addEventListener("mouseenter", () => {
+      slideHoldTimer = setTimeout(() => {
+        slideIsPaused = true;
+        stopSlideAutoPlay();
+      }, 2000);
+    });
+
+    slideWrapper.addEventListener("mouseleave", () => {
+      clearTimeout(slideHoldTimer);
+      slideIsPaused = false;
+      startSlideAutoPlay();
+    });
+
+    startSlideAutoPlay();
+  </script>
+</body>
+</html>
