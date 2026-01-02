@@ -1,85 +1,118 @@
+/* ================= WRAPPER ================= */
+
 .models-section-wrap {
-  /* border: 2px solid red; */
-  width: 100%;
-  position: relative;
-  z-index: 5;
+  /* border: 5px solid red; */
+  padding: 2.8rem;
   display: flex;
   gap: 24px;
   overflow-x: hidden;
-  overflow-y: hidden;
-  padding: 2.5rem;
-  justify-content: flex-start;
+  /* overflow-y: hidden; */
   align-items: center;
+  height: 82.8vh;
+}
+
+.model-options {
+  /* border: 2px solid blue; */
+  overflow: hidden;
+  width: 76vw;
+  min-width: 76vw;
+  border-radius: 7px;
+  position: relative;
+  height: 100%;
+}
+
+.models-section-wrap {
+  scroll-snap-type: x mandatory;
+}
+
+.model-options {
+  scroll-snap-align: center;
 }
 
 /* ================= MODEL OPTIONS ================= */
 
-.model-options {
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 71.6vh;
-  width: 76.8vw;
-  min-width: 76.8vw;
-  flex-shrink: 0;
-  /* border: 2px solid green; */
-  user-select: none;
-  border-radius: 8px;
-}
+/* ================= HERO IMAGE (HTML handles media) ================= */
 
-.model-options img {
+.hero-img,
+.hero-img img {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
 }
 
-/* ================= MOBILE FIX (ACTUAL FIX) ================= */
+/* ================= MODEL INFO OVERLAY ================= */
 
-@media (max-width: 1200px) {
-  .model-options {
-    width: 50px;
-    min-width: 50px;
-    height: 520px;
-    flex: 0 0 610px;
-  }
+.model-info {
+  position: absolute;
+  inset: 0;
+  padding: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 3;
+  color: #fff;
 }
 
-@media (max-width: 598px) {
-  .models-section-wrap {
-    padding: 0.8rem;
-    gap: 0.8rem;
-  }
+.model-info * {
+  max-width: 100%;
+}
 
-  .model-options {
-    width: 50px;
-    min-width: 50px;
-    flex: 0 0 330px;
-    height: 520px;
-  }
+.model-info h2 {
+  margin-top: auto;
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.model-info h3 {
+  margin-top: 0.4rem;
+  font-size: 1.4rem;
+  font-weight: 100;
+  text-decoration: underline;
+  opacity: 0.95;
+  /* display: none; */
+}
+
+span.tag {
+  font-weight: bold;
+}
+
+img {
+  user-select: none;
 }
 
 /* ================= BUTTONS ================= */
 
-.img-btn {
+.btn-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 1.2rem;
+}
+
+.btn-row button {
+  padding: 0.7rem 1.8rem;
+  min-width: 180px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ================= NAV BUTTONS ================= */
+
+.img-btn2 {
   position: absolute;
-  top: 50%;
+  top: 120vh;
   left: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 0 40px;
   z-index: 6;
-  transform: translateY(-50%);
 }
 
-@media (max-width: 1200px) {
-  .img-btn {
-    display: none;
-  }
-}
-
-.img-btn button {
+.img-btn2 button {
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -104,109 +137,80 @@
   background-color: rgb(143, 132, 132);
 }
 
-
-
-/* Bakwaas Codes of Chat GPT*/
-/* ===== FIX MODEL INFO OVERLAY ===== */
-
-.model-options{
-  position: relative;
-}
-
-/* overlay */
-.model-info{
-  position: absolute;
-  inset: 0;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  z-index: 3;
-
-  /* ❌ space-between hata
-     ✅ Tesla-style bottom stack */
-  justify-content: flex-start;
-
-  color: #fff; /* 🔥 black text issue gone */
-  /* text-shadow: 0 1px 6px rgba(0,0,0,0.35); */
-
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.35),
-    rgba(0,0,0,0.05),
-    rgba(0,0,0,0.55)
-  );
-}
-
-/* text alignment fix */
-.model-info *{
-  max-width: 100%;
-}
-
-/* spacing like Tesla */
-.model-info h2{
-  margin-top: auto; /* 👈 title niche aata hai */
-  font-size: 2.4rem;
-  font-weight: 600;
-}
-
-.model-info p{
-  margin-top: 0.4rem;
-  font-size: 1rem;
-  opacity: 0.95;
-}
-
-/* ===== BUTTON FIX (REAL ONE) ===== */
-
-.btn-row{
-  display: flex;
-  gap: 12px;
-  margin-top: 1.2rem; /* 👈 buttons title ke niche */
-}
-
-/* buttons */
-.btn-row button{
-  padding: 0.7rem 1.8rem;
-  min-width: 180px;
-  height: 40px;
-  border-radius: 6px;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-/* ensure image stays behind */
-.model-options img{
-  position: relative;
-  z-index: 1;
-}
-
-.model-info h3{
-  text-decoration: underline;
-  font-weight: 100;
-}
-
-/* ===== RESPONSIVE ===== */
-
-@media (max-width: 768px){
-  .model-info{
+/* TEXT RESPONSIVE */
+/* -------Responsive one------- */
+@media (max-width: 768px) {
+  .model-info {
     padding: 1.4rem;
   }
 
-  .model-info h2{
-    font-size: 1.6rem;
+  .model-info h2 {
+    font-size: 2.2rem;
   }
 
-  .model-info p{
-    font-size: 0.9rem;
+  .model-info h3 {
+    font-size: 1rem;
   }
 
-  .btn-row{
-    /* flex-direction: column; 🔥 Tesla mobile behavior */
+  .btn-row {
     gap: 8px;
   }
 
-  .btn-row button{
+  .btn-row button {
     width: 100%;
     min-width: unset;
   }
 }
+/* -------Responsive For Mobile------- */
+
+@media (max-width: 599px) {
+  .models-section-wrap {
+    padding: 0.7rem;
+    height: 66vh;
+    gap: 12px;
+  }
+  .model-info {
+    padding: 1rem;
+  }
+  .model-options {
+    min-width: 66vw;
+    width: 66vw;
+    /* border: 2px solid green; */
+  }
+  span.tag {
+    font-size: 0.92rem;
+  }
+  .btn-row button {
+    min-width: 100px;
+  }
+  .img-btn2 {
+    display: none;
+  }
+  .btn-row {
+    text-wrap: nowrap;
+  }
+}
+
+/* -------Responsive three------- */
+
+/* @media (max-width: 1200px) {
+  .img-btn2 {
+    display: none;
+  }
+  .models-section-wrap {
+    gap: 18px;
+    padding: 2.8rem 2rem;
+    height: 74vh;
+  }
+
+  .model-options {
+    min-width: 51vw;
+  }
+
+  .model-info {
+    padding: 1.4rem;
+  }
+  .btn-row button {
+    min-width: 45%;
+  }
+} */

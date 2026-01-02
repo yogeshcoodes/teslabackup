@@ -1,9 +1,9 @@
 // ================= HERO IMAGE CAROUSEL =================
 
-// images list
+// images list (DIRECT LINKS)
 const images = [
-  "assets/herosectionimage1.jpg",
-  "assets/herosectionimage2.jpg"
+  "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Promo-Cybertruck-Desktop-US-v2.jpg",
+  "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Promo-Meet-Model-Y-Desktop.jpg",
 ];
 
 // elements
@@ -88,9 +88,7 @@ img.addEventListener("touchend", (e) => {
   const diff = startX - endX;
 
   if (Math.abs(diff) > 50) {
-    diff > 0
-      ? showImage(currentIndex + 1)
-      : showImage(currentIndex - 1);
+    diff > 0 ? showImage(currentIndex + 1) : showImage(currentIndex - 1);
   }
 
   startAutoPlay();
