@@ -1,0 +1,243 @@
+.features {
+  height: 42rem;
+  padding: 1.95rem 2.75rem;
+  display: flex;
+  gap: 1.3rem;
+  justify-content: space-between;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* ================= LEFT ================= */
+
+.map-vid {
+  width: 60.5vw;
+  height: 100%;
+  /* border: 1px solid grey; */
+  border-radius: 7px;
+}
+
+/* MAP VIDEO */
+
+.map-vid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.map-vid video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/*  PLAY / PAUSE BUTTON  */
+
+.video-btn {
+  z-index: 5;
+  position: absolute;
+  top: 1.4rem;
+  right: 1.4rem;
+
+  width: 3.2rem;
+  height: 3.2rem;
+
+  border-radius: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  background: #5e7279;
+  backdrop-filter: blur(6px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.video-btn:hover {
+  background: #55676d;
+}
+
+.video-btn svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: #fff;
+}
+
+/* ================= MAP VIDEO ================= */
+
+.map-vid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.map-vid video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ================= TEXT OVERLAY ================= */
+
+.map-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  padding: 2.4rem;
+  gap: 1.6rem;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0) 60%
+  );
+}
+
+.map-overlay h2 {
+  color: #fff;
+  font-size: 2.6rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.map-overlay h2 span {
+  font-weight: 400;
+}
+
+/* ================= BUTTON ROW ================= */
+
+.map-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.map-actions button {
+  padding: 0.75rem 1.6rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+
+/* PRIMARY (Blue) */
+.map-actions .primary {
+  background: #3e6ae1;
+  color: #fff;
+}
+
+/* SECONDARY (White) */
+.map-actions .secondary {
+  background: #fff;
+  color: #000;
+}
+
+/* ================= RIGHT ================= */
+
+.discover {
+  width: 30vw;
+  height: 100%;
+  /* border: 1px solid salmon; */
+  border-radius: 7px;
+  overflow: hidden;
+  position: relative;
+}
+
+.discover-media,
+.discover-media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.discover-media img {
+  object-fit: cover;
+}
+
+.discover-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  padding: 2.4rem;
+  gap: 1.2rem;
+}
+
+.discover-overlay h2 {
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1.15;
+  max-width: 22rem;
+}
+
+.discover-overlay button {
+  width: fit-content;
+  padding: 0.7rem 2.2rem;
+
+  border: none;
+  border-radius: 6px;
+
+  background: #3e6ae1;
+  color: #fff;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .features {
+    flex-direction: column;
+    height: auto;
+    flex-wrap: wrap;
+  }
+  .map-vid,
+  .discover {
+    width: 100%;
+    height: 32.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .features {
+    padding: 14px;
+  }
+  .discover-overlay {
+    padding: 1rem;
+  }
+
+  .video-btn {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .video-btn svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  .map-overlay {
+    padding: 1.6rem;
+  }
+
+  .map-overlay h2 {
+    font-size: 2rem;
+  }
+}

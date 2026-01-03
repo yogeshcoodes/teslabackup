@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="features-section/features-section.css" />
+  </head>
+  <body>
+    <div class="features">
+      <div class="map-vid">
+        <video id="mapVideo" autoplay muted loop playsinline>
+          <source src="assets/selfdrive.mp4" type="video/mp4" />
+        </video>
+
+        <!-- PLAY / PAUSE -->
+        <button class="video-btn" id="videoBtn" aria-label="Play Pause">
+          <svg id="videoIcon" viewBox="0 0 24 24">
+            <path id="videoIconPath" d="M6 4h4v16H6zm8 0h4v16h-4z" />
+          </svg>
+        </button>
+
+        <!-- TEXT + BUTTONS OVER VIDEO -->
+        <div class="map-overlay">
+          <h2>
+            Full Self-Driving<br />
+            <span>(Supervised)</span>
+          </h2>
+
+          <div class="map-actions">
+            <button class="primary">Demo Drive</button>
+            <button class="secondary">View Report</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="discover">
+        <div class="discover-overlay">
+          <h2>Features That Come Standard</h2>
+          <button>Discover</button>
+        </div>
+        <picture class="discover-media">
+          <!-- MOBILE -->
+          <source
+            srcset="
+              https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Features-Mobile.png
+            "
+            media="(max-width: 599px)"
+          />
+
+          <!-- TABLET -->
+          <source
+            srcset="
+              https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Features-Tablet.png
+            "
+            media="(min-width: 600px) and (max-width: 899px)"
+          />
+
+          <!-- DESKTOP -->
+          <source
+            srcset="
+              https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Features-Desktop.png
+            "
+            media="(min-width: 900px)"
+          />
+
+          <!-- FALLBACK -->
+          <img
+            src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Features-Desktop.png"
+            alt="Features That Come Standard"
+            loading="lazy"
+          />
+        </picture>
+      </div>
+    </div>
+  </body>
+</html>

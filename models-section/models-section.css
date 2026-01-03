@@ -9,6 +9,7 @@
   /* overflow-y: hidden; */
   align-items: center;
   height: 82.8vh;
+  scroll-snap-type: x mandatory;
 }
 
 .model-options {
@@ -22,13 +23,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.models-section-wrap {
-  scroll-snap-type: x mandatory;
-}
-
-.model-options {
   scroll-snap-align: center;
 }
 
@@ -127,7 +121,7 @@ img {
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-top: -26px;
+  margin-top: 16px;
 }
 
 .owlcarosal-2 button {
@@ -163,6 +157,9 @@ img {
 
   .btn-row button {
     min-width: 45%;
+  }
+  .owlcarosal-2 {
+    margin-top: -28px;
   }
 }
 
@@ -229,5 +226,8 @@ img {
 
   .btn-row {
     text-wrap: nowrap;
+  }
+  .owlcarosal-2 {
+    margin-top: 4px;
   }
 }
