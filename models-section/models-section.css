@@ -2,7 +2,7 @@
 
 .models-section-wrap {
   /* border: 5px solid red; */
-  padding: 2.8rem;
+  padding: 2.8rem 2.8rem 0.2rem 2.8rem;
   display: flex;
   gap: 24px;
   overflow-x: hidden;
@@ -14,11 +14,14 @@
 .model-options {
   /* border: 2px solid blue; */
   overflow: hidden;
-  width: 76vw;
-  min-width: 76vw;
+  width: 56rem;
+  min-width: 58.2rem;
   border-radius: 7px;
   position: relative;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .models-section-wrap {
@@ -29,9 +32,7 @@
   scroll-snap-align: center;
 }
 
-/* ================= MODEL OPTIONS ================= */
-
-/* ================= HERO IMAGE (HTML handles media) ================= */
+/* ================= HERO IMAGE ================= */
 
 .hero-img,
 .hero-img img {
@@ -70,7 +71,6 @@
   font-weight: 100;
   text-decoration: underline;
   opacity: 0.95;
-  /* display: none; */
 }
 
 span.tag {
@@ -127,6 +127,7 @@ img {
   display: flex;
   justify-content: center;
   gap: 8px;
+  margin-top: -26px;
 }
 
 .owlcarosal-2 button {
@@ -137,8 +138,35 @@ img {
   background-color: rgb(143, 132, 132);
 }
 
-/* TEXT RESPONSIVE */
-/* -------Responsive one------- */
+/* ================= RESPONSIVE ================= */
+
+/* ------- max 1200px (MOVED UP) ------- */
+@media (max-width: 1200px) {
+  .img-btn2 {
+    display: none;
+  }
+
+  .models-section-wrap {
+    gap: 16px;
+    padding: 44px 32px;
+    height: 38rem;
+  }
+
+  .model-options {
+    min-width: 38rem;
+    width: 38rem;
+  }
+
+  .model-info {
+    padding: 1.4rem;
+  }
+
+  .btn-row button {
+    min-width: 45%;
+  }
+}
+
+/* ------- max 768px ------- */
 @media (max-width: 768px) {
   .model-info {
     padding: 1.4rem;
@@ -161,56 +189,45 @@ img {
     min-width: unset;
   }
 }
-/* -------Responsive For Mobile------- */
 
+/* ------- max 900px (MOBILE – LAST) ------- */
+
+@media (max-width: 900px) {
+  .models-section-wrap {
+    padding: 44px 32px;
+  }
+}
+/* ------- max 599px (MOBILE – LAST) ------- */
 @media (max-width: 599px) {
   .models-section-wrap {
-    padding: 0.7rem;
-    height: 66vh;
-    gap: 12px;
+    padding: 12px;
+    height: 34rem;
+    gap: 16px;
   }
+
   .model-info {
     padding: 1rem;
   }
+
   .model-options {
-    min-width: 66vw;
-    width: 66vw;
+    min-width: 20.6rem;
+    width: 20.7rem;
     /* border: 2px solid green; */
   }
+
   span.tag {
     font-size: 0.92rem;
   }
+
   .btn-row button {
     min-width: 100px;
   }
+
   .img-btn2 {
     display: none;
   }
+
   .btn-row {
     text-wrap: nowrap;
   }
 }
-
-/* -------Responsive three------- */
-
-/* @media (max-width: 1200px) {
-  .img-btn2 {
-    display: none;
-  }
-  .models-section-wrap {
-    gap: 18px;
-    padding: 2.8rem 2rem;
-    height: 74vh;
-  }
-
-  .model-options {
-    min-width: 51vw;
-  }
-
-  .model-info {
-    padding: 1.4rem;
-  }
-  .btn-row button {
-    min-width: 45%;
-  }
-} */
