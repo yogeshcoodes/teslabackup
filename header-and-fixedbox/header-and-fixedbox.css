@@ -461,8 +461,8 @@ input.placeholder {
 }
 
 /* This has to be deactivated in future */
-@media (max-width: 1500px) {
+/* @media (max-width: 1500px) {
   .fixed-box {
   display: none;
   }
-}
+} */
