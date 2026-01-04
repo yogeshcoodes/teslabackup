@@ -133,7 +133,9 @@
   .charging-info {
     padding: 1rem 0.9rem;
   }
-
+  .chargebtn {
+    gap: 6px;
+  }
   .chargebtn button {
     width: 100%;
     margin-top: 5px;
