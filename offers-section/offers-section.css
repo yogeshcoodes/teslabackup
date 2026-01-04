@@ -2,7 +2,7 @@
   width: 100%;
   height: auto;
   display: flex;
-  align-items: stretch;
+  /* align-items: stretch; */
   padding: 1.5rem 2.8rem;
   /* flex-wrap: wrap; */
   gap: 20.5px;
@@ -14,12 +14,12 @@
 /* ================= BOX ================= */
 
 .box {
-  /* border: 1px solid orange; */
+  border: 1px solid rgb(235, 235, 235);
   width: 34rem;
-  height: 16rem;
+  height: 15rem;
   display: flex;
   gap: 0.6rem; /* rem */
-  background-color: rgb(235, 235, 235);
+  background-color: rgb(238, 238, 238);
   border-radius: 0.45rem; /* rem */
   overflow: hidden;
   justify-content: space-between;
@@ -59,6 +59,8 @@
   height: 37px;
   border: none;
   background-color: #fff;
+  border: 1px solid rgb(235, 235, 235);
+
   color: rgba(0, 0, 0, 0.836);
   font-size: 0.875rem;
   border-radius: 0.3rem;
@@ -106,6 +108,11 @@
 }
 
 @media (max-width: 600px) {
+  .box {
+    justify-content: space-between;
+    /* border: 1px solid black; */
+  }
+
   #offers-sec {
     padding: 18.5px 12px;
     flex-wrap: wrap;
@@ -132,7 +139,7 @@
     font-size: 1rem;
     font-weight: 100;
     font-size: 1rem;
-    /* height: 49px; */
+    height: 49px;
   }
 
   .offerinfo button {

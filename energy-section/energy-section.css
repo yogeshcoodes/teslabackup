@@ -1,0 +1,224 @@
+/* ================= WRAPPER ================= */
+
+.energy-section-wrap {
+  /* border: 5px solid red; */
+  padding: 2.8rem 2.8rem 0.2rem 2.8rem;
+  display: flex;
+  gap: 24px;
+  overflow-x: hidden;
+  /* overflow-y: hidden; */
+  align-items: center;
+  height: 82.8vh;
+  scroll-snap-type: x mandatory;
+}
+
+.energy-options {
+  /* border: 2px solid blue; */
+  overflow: hidden;
+  width: 58.2rem;
+  min-width: 58.2rem;
+  border-radius: 7px;
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: center;
+}
+
+/* ================= ENERGY IMAGE ================= */
+
+.energy-img,
+.energy-img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ================= ENERGY INFO OVERLAY ================= */
+
+.energy-info {
+  position: absolute;
+  inset: 0;
+  padding: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 3;
+  color: #fff;
+}
+
+.energy-info * {
+  max-width: 100%;
+}
+
+.energy-info h2 {
+  margin-top: auto;
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.energy-info h3 {
+  margin-top: 0.4rem;
+  font-size: 1.4rem;
+  font-weight: 100;
+  opacity: 0.95;
+}
+
+img {
+  user-select: none;
+}
+
+/* ================= BUTTONS ================= */
+
+.btn-row2 {
+  display: flex;
+  gap: 12px;
+  margin-top: 1.2rem;
+}
+
+.btn-row2 button {
+  padding: 0.7rem 1.8rem;
+  min-width: 180px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ================= NAV BUTTONS ================= */
+
+.img-btn3 {
+  position: absolute;
+  top: 120vh;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 6;
+}
+
+.img-btn3 button {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* ================= DOTS ================= */
+
+.owlcarosal-3 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.owlcarosal-3 button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgb(143, 132, 132);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* ------- max 1200px (MOVED UP) ------- */
+@media (max-width: 1200px) {
+  .img-btn3 {
+    display: none;
+  }
+
+  .energy-section-wrap {
+    gap: 16px;
+    padding: 44px 32px;
+    height: 38rem;
+  }
+
+  .energy-options {
+    min-width: 38rem;
+    width: 38rem;
+  }
+
+  .energy-info {
+    padding: 1.4rem;
+  }
+
+  .btn-row2 button {
+    min-width: 45%;
+  }
+  .owlcarosal-3 {
+    margin-top: -28px;
+  }
+}
+
+/* ------- max 768px ------- */
+@media (max-width: 768px) {
+  .energy-info {
+    padding: 1.4rem;
+  }
+
+  .energy-info h2 {
+    font-size: 2.2rem;
+  }
+
+  .energy-info h3 {
+    font-size: 1rem;
+  }
+
+  .btn-row2 {
+    gap: 8px;
+  }
+
+  .btn-row2 button {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+/* ------- max 900px (MOBILE – LAST) ------- */
+
+@media (max-width: 900px) {
+  .energy-section-wrap {
+    padding: 44px 32px;
+  }
+}
+/* ------- max 599px (MOBILE – LAST) ------- */
+@media (max-width: 599px) {
+  .energy-section-wrap {
+    padding: 12px;
+    height: 34rem;
+    gap: 16px;
+  }
+
+  .energy-info {
+    padding: 1rem;
+  }
+
+  .energy-options {
+    min-width: 20.6rem;
+    width: 20.7rem;
+    /* border: 2px solid green; */
+  }
+
+  .btn-row2 button {
+    min-width: 100px;
+  }
+
+  .img-btn3 {
+    display: none;
+  }
+
+  .btn-row2 {
+    white-space: nowrap;
+  }
+  .owlcarosal-3 {
+    margin-top: 4px;
+  }
+}

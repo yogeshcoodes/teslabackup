@@ -329,10 +329,8 @@ input.placeholder {
   font-size: 14px;
   font-weight: bold;
   color: #000000c9;
-
   white-space: nowrap;
   cursor: pointer;
-
   flex-shrink: 0;
   max-width: 100%;
 }
@@ -401,44 +399,9 @@ input.placeholder {
     width: 415px;
     max-width: 90%;
   }
-}
-
-@media (max-width: 550px) {
-  .book-drive {
-    width: 415px;
-    max-width: 90%;
-  }
-
-  .query-box {
-    justify-content: flex-start;
-    padding: 0;
-    gap: 0;
-  }
-}
-
-@media (max-width: 550px) {
   .query-box {
     width: 50px;
     max-width: 50px;
-
-    gap: 0;
-    padding: 0;
-
-    flex-shrink: 0;
-  }
-
-  .query-box .text,
-  .query-box .your-text,
-  .query-box .send {
-    display: none;
-  }
-}
-
-@media (max-width: 600px) {
-  .query-box {
-    width: 50px;
-    max-width: 50px;
-
     gap: 0;
     padding: 0;
     flex-shrink: 0;
@@ -457,6 +420,32 @@ input.placeholder {
   .book-drive {
     max-width: 100%;
     flex: 0 0 400px;
+  }
+}
+
+@media (max-width: 550px) {
+  .query-box {
+    width: 50px;
+    max-width: 50px;
+    gap: 0;
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  .query-box .text,
+  .query-box .your-text,
+  .query-box .send {
+    display: none;
+  }
+  .book-drive {
+    width: 415px;
+    max-width: 90%;
+  }
+
+  .query-box {
+    justify-content: flex-start;
+    padding: 0;
+    gap: 0;
   }
 }
 

@@ -1,0 +1,171 @@
+.charging-info {
+  padding: 1.25rem 6rem;
+  width: 100%;
+  height: 17.48rem;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
+
+.find-charge {
+  display: flex;
+  /* outline: 1px solid green; */
+  gap: 8.5rem;
+  overflow: hidden;
+}
+
+.fixed {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+}
+
+.chargers,
+.ch-locations {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.chargers svg,
+.ch-locations svg {
+  width: 50px;
+  height: 50px;
+}
+
+.text-sec h2,
+.icon-sec h2 {
+  font-size: 2.7rem;
+  font-weight: bold;
+  color: rgba(14, 14, 14, 0.934);
+}
+
+.text-sec p {
+  font-size: 1.2rem;
+  color: #5c5e62;
+  font-weight: bold;
+  width: 80%;
+  height: 100%;
+}
+
+.icon-sec p {
+  font-size: 1.2rem;
+  color: #5c5e62;
+  font-weight: bold;
+  /* margin-top: -20px; */
+  width: 50%;
+  height: 100%;
+}
+.text-sec svg {
+  height: 2rem;
+  width: 2rem;
+}
+
+.icon-sec {
+  display: flex;
+  gap: 3rem;
+}
+
+.chargebtn {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.chargebtn button {
+  padding: 0.68rem 1.6rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+}
+
+.chargebtn1 {
+  background-color: #171a20;
+  color: white;
+}
+
+.chargebtn2 {
+  background-color: #eeeeee;
+  color: rgba(0, 0, 0, 0.91);
+}
+
+@media (max-width: 1200px) {
+  .charging-info {
+    padding: 1.25rem 3rem;
+    height: auto;
+  }
+
+  .find-charge {
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+  }
+
+  .icon-sec {
+    width: 100%;
+  }
+
+  .chargebtn {
+    margin-top: 1.5rem;
+  }
+
+  .chargers svg,
+  .ch-locations svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .ch-locations p {
+    width: 70%;
+  }
+}
+
+@media (max-width: 600px) {
+  .charging-info {
+    padding: 1rem 0.9rem;
+  }
+
+  .chargebtn button {
+    width: 100%;
+  }
+
+  .find-charge {
+    padding: 10px;
+    gap: 6px;
+  }
+
+  .chargers svg,
+  .ch-locations svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  .text-sec h2,
+  .icon-sec h2 {
+    font-size: 2.2rem;
+    width: 100%;
+  }
+
+  .text-sec p,
+  .icon-sec p {
+    font-size: 0.88rem;
+    width: 100%;
+    height: 100%;
+  }
+
+  .icon-sec {
+    gap: 7.5px;
+  }
+  .fixed {
+    gap: 2px;
+  }
+}

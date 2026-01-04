@@ -6,6 +6,7 @@
   font-family: "Google Sans", sans-serif;
   -webkit-tap-highlight-color: transparent;
   transition: all 0.2s;
+  /* border: 1px solid purple; */
 }
 
 /* Remove tap highlight (mobile) */
