@@ -1,100 +1,80 @@
-// ================= HERO IMAGE CAROUSEL =================
+// ================= HERO SLIDER (HTML SLIDES) =================
 
-// images list (DIRECT LINKS)
-const images = [
-  "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Promo-Cybertruck-Desktop-US-v2.jpg",
-  "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Promo-Meet-Model-Y-Desktop.jpg",
-];
-
-// elements
-const img = document.querySelector(".img-container img");
-const leftBtn = document.querySelector(".hero-btn .right");
-const rightBtn = document.querySelector(".hero-btn .left");
+const slides = document.querySelectorAll(".hero-slide");
+const nextBtn = document.querySelector(".hero-btn .right");
+const prevBtn = document.querySelector(".hero-btn .left");
 const dots = document.querySelectorAll(".owlcarosal button");
 
-let currentIndex = 0;
-let autoTimer = null;
+let index = 0;
+let timer = null;
 const interval = 4000;
 
-// fade setup (JS se hi)
-img.style.transition = "opacity 0.8s ease-in-out";
+// ================= CORE =================
+function showSlide(i) {
+  if (i < 0) i = slides.length - 1;
+  if (i >= slides.length) i = 0;
 
-// ================= CORE (FADE LOGIC) =================
-function showImage(index) {
-  if (index < 0) index = images.length - 1;
-  if (index >= images.length) index = 0;
+  slides.forEach((slide, idx) => {
+    slide.classList.toggle("active", idx === i);
+  });
 
-  // fade out
-  img.style.opacity = "0";
+  dots.forEach((dot, idx) => {
+    dot.style.background =
+      idx === i ? "#fff" : "rgba(255,255,255,0.4)";
+  });
 
-  setTimeout(() => {
-    img.src = images[index];
-    currentIndex = index;
-
-    // dots active
-    dots.forEach((dot, i) => {
-      dot.style.background =
-        i === currentIndex ? "#fff" : "rgba(255,255,255,0.4)";
-    });
-
-    // fade in
-    img.style.opacity = "1";
-  }, 300);
+  index = i;
 }
 
 // ================= AUTOPLAY =================
-function startAutoPlay() {
-  stopAutoPlay();
-  autoTimer = setInterval(() => {
-    showImage(currentIndex + 1);
-  }, interval);
+function startAuto() {
+  stopAuto();
+  timer = setInterval(() => showSlide(index + 1), interval);
 }
 
-function stopAutoPlay() {
-  if (autoTimer) {
-    clearInterval(autoTimer);
-    autoTimer = null;
+function stopAuto() {
+  if (timer) {
+    clearInterval(timer);
+    timer = null;
   }
 }
 
 // ================= ARROWS =================
-rightBtn.addEventListener("click", () => {
-  showImage(currentIndex + 1);
-  startAutoPlay();
+nextBtn.addEventListener("click", () => {
+  showSlide(index + 1);
+  startAuto();
 });
 
-leftBtn.addEventListener("click", () => {
-  showImage(currentIndex - 1);
-  startAutoPlay();
+prevBtn.addEventListener("click", () => {
+  showSlide(index - 1);
+  startAuto();
 });
 
 // ================= DOTS =================
-dots.forEach((dot, index) => {
+dots.forEach((dot, i) => {
   dot.addEventListener("click", () => {
-    showImage(index);
-    startAutoPlay();
+    showSlide(i);
+    startAuto();
   });
 });
 
-// ================= SWIPE (MOBILE ONLY) =================
+// ================= SWIPE (MOBILE) =================
 let startX = 0;
 
-img.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
-});
+slides.forEach(slide => {
+  slide.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+  });
 
-img.addEventListener("touchend", (e) => {
-  const endX = e.changedTouches[0].clientX;
-  const diff = startX - endX;
-
-  if (Math.abs(diff) > 50) {
-    diff > 0 ? showImage(currentIndex + 1) : showImage(currentIndex - 1);
-  }
-
-  startAutoPlay();
+  slide.addEventListener("touchend", e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? showSlide(index + 1) : showSlide(index - 1);
+    }
+    startAuto();
+  });
 });
 
 // ================= INIT =================
-img.style.opacity = "1";
-showImage(0);
-startAutoPlay();
+showSlide(0);
+startAuto();

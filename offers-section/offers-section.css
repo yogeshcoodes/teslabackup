@@ -19,11 +19,11 @@
   height: 15rem;
   display: flex;
   gap: 0.6rem; /* rem */
-  background-color: rgb(238, 238, 238);
+  background-color: #fafafa;
   border-radius: 0.45rem; /* rem */
   overflow: hidden;
   justify-content: space-between;
-  align-items: streatch;
+  align-items: stretch;
   /* border: 1px solid blue; */
 }
 

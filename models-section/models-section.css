@@ -94,6 +94,15 @@ img {
   cursor: pointer;
 }
 
+button.order{
+  background-color: #3E6AE1;
+  color: white;
+}
+
+button.learn{
+  background-color: white;
+}
+
 /* ================= NAV BUTTONS ================= */
 
 .img-btn2 {

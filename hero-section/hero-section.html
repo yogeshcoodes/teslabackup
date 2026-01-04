@@ -1,59 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="hero-section/hero-section.css" />
-  </head>
-  <body>
-    <div class="img-container one">
-      <img src="" alt="error-loding" />
-      <div class="model-info-top">
-        <h1>Model Y</h1>
-        <p>Lease Prises Increase on December 26</p>
-        <span></span>
-      </div>
 
-      <div class="band">
-        <button class="order-btn">Order Now</button>
-        <button class="view-inv-btn">View Inventory</button>
-      </div>
-      <div class="hero-btn">
-        <button class="right">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            width="24"
-            height="24"
-            fill="none"
-          >
-            <path
-              fill="currentColor"
-              d="m15.057 4.22-7.213 7.232a.75.75 0 0 0 0 1.06l7.25 7.268a.75.75 0 0 0 1.062-1.06l-6.721-6.739 6.684-6.701a.75.75 0 0 0-1.062-1.06"
-            />
-          </svg>
-        </button>
-        <button class="left">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            width="24"
-            height="24"
-            fill="none"
-          >
-            <path
-              fill="currentColor"
-              d="m8.943 19.78 7.213-7.232a.75.75 0 0 0 0-1.06L8.906 4.22a.75.75 0 0 0-1.062 1.06l6.721 6.739-6.684 6.701a.75.75 0 0 0 1.062 1.06"
-            />
-          </svg>
-        </button>
-      </div>
-      <div class="owlcarosal">
-        <button class="right"></button>
-        <button class="left"></button>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="hero-section/hero-section.css" />
+</head>
+
+<body>
+  <div class="img-container one">
+
+    <!-- SLIDE 1 -->
+     
+    <div class="hero-slide active">
+      <picture class="hero-img" style="
+            --tcl-media-width: 100%;
+            --tcl-media-height: 100%;
+            --tcl-media-max-width: 100%;
+          ">
+        <source srcset="
+              https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Promo-Meet-Model-3-Mobile.jpg
+            " media="(max-width: 599px) and (orientation: portrait)" />
+
+        <source srcset="
+              https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Promo-Meet-Model-3-Desktop.jpg
+            " media="(max-width: 599px) and (orientation: landscape)" />
+
+        <source srcset="
+              https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Promo-Meet-Model-3-Tablet.jpg
+            " media="(min-width: 600px) and (orientation: portrait)" />
+
+        <source srcset="
+              https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Promo-Meet-Model-3-Desktop.jpg
+            " media="(min-width: 900px) and (orientation: landscape)" />
+
+        <img
+          src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Promo-Meet-Model-3-Desktop.jpg"
+          alt="Model 3" />
+      </picture>
     </div>
-    <!-- <div class="image-container two"> -->
-  </body>
+
+    <!-- SLIDE 2 -->
+
+    <div class="hero-slide">
+      <picture class="hero-img" style="
+            --tcl-media-width: 100%;
+            --tcl-media-height: 100%;
+            --tcl-media-max-width: 100%;
+          ">
+        <source srcset="
+              https://digitalcontent.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Promotional-Carousel-Model-Y-Mobile-US.png
+            " media="(max-width: 599px) and (orientation: portrait)" />
+
+        <source srcset="
+              https://digitalcontent.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Promotional-Carousel-Model-Y-Desktop-US.png
+            " media="(max-width: 599px) and (orientation: landscape)" />
+
+        <source srcset="
+              https://digitalcontent.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Promotional-Carousel-Model-Y-Tablet-US.png
+            " media="(min-width: 600px) and (orientation: portrait)" />
+
+        <source srcset="
+              https://digitalcontent.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Promotional-Carousel-Model-Y-Desktop-US.png
+            " media="(min-width: 900px) and (orientation: landscape)" />
+
+        <img
+          src="https://digitalcontent.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Promotional-Carousel-Model-Y-Desktop-US.png"
+          alt="Model Y" />
+      </picture>
+    </div>
+    <div class="model-info-top">
+      <h1>Model Y</h1>
+      <p>Lease Prises Increase on December 26</p>
+      <span></span>
+    </div>
+
+    <div class="band">
+      <button class="order-btn">Order Now</button>
+      <button class="view-inv-btn">View Inventory</button>
+    </div>
+    <div class="hero-btn">
+      <button class="right">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none">
+          <path fill="currentColor"
+            d="m15.057 4.22-7.213 7.232a.75.75 0 0 0 0 1.06l7.25 7.268a.75.75 0 0 0 1.062-1.06l-6.721-6.739 6.684-6.701a.75.75 0 0 0-1.062-1.06" />
+        </svg>
+      </button>
+      <button class="left">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none">
+          <path fill="currentColor"
+            d="m8.943 19.78 7.213-7.232a.75.75 0 0 0 0-1.06L8.906 4.22a.75.75 0 0 0-1.062 1.06l6.721 6.739-6.684 6.701a.75.75 0 0 0 1.062 1.06" />
+        </svg>
+      </button>
+    </div>
+    <div class="owlcarosal">
+      <button class="right"></button>
+      <button class="left"></button>
+    </div>
+  </div>
+</body>
+
 </html>
