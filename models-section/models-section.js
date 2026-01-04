@@ -105,7 +105,8 @@
     isDragging = false;
 
     const diff = currentX - startX;
-    const threshold = slideWidth() * 0.4; // 40% swipe rule
+const threshold = 80;
+
 
     if (diff < -threshold) goTo(index + 1);
     else if (diff > threshold) goTo(index - 1);

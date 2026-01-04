@@ -149,9 +149,13 @@
     height: 34px;
   }
 
-  .text-sec h2,
-  .icon-sec h2 {
+  .text-sec h2 {
     font-size: 2.2rem;
+    width: 100%;
+  }
+
+  .icon-sec h2 {
+    font-size: 1.75rem;
     width: 100%;
   }
 
@@ -166,6 +170,6 @@
     gap: 7.5px;
   }
   .fixed {
-    gap: 2px;
+    gap: 0px;
   }
 }
