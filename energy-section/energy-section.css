@@ -109,6 +109,16 @@ img {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
 
+button.order2 {
+  background-color: #3E6AE1;
+  color: #fff;
+}
+
+button.learn2 {
+  background-color: white;
+  color: #000;
+}
+
 /* ================= DOTS ================= */
 
 .owlcarosal-3 {
