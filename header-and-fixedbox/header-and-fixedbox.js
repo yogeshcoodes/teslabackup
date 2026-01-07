@@ -4,21 +4,19 @@ const questions = [
   "Compare Model 3 with Model Y",
   "What's Dog Mode?"
 ];
-
 let current = 0;
-
 const input = document.querySelector(".placeholder");
-
 if (input) {
   input.style.transition = "opacity 0.6s ease-in-out";
-
   setInterval(() => {
-    input.style.opacity = "0";
-
-    setTimeout(() => {
-      current = (current + 1) % questions.length;
-      input.placeholder = `"${questions[current]}"`;
-      input.style.opacity = "1";
-    }, 300);
+    // Only animate if input is empty
+    if (input.value === "") {
+      input.style.opacity = "0";
+      setTimeout(() => {
+        current = (current + 1) % questions.length;
+        input.placeholder = `"${questions[current]}"`;
+        input.style.opacity = "1";
+      }, 300);
+    }
   }, 3000);
 }
