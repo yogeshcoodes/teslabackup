@@ -9,6 +9,10 @@
   /* border: 1px solid purple; */
 }
 
+*{
+  scroll-behavior:smooth;
+}
+
 /* Remove tap highlight (mobile) */
 input,
 textarea,

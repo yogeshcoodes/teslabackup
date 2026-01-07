@@ -265,7 +265,7 @@ header {
 
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
   z-index: 999;
-    padding: 2rem 12rem;
+    padding: 2rem 12.5rem;
 
 }
 
@@ -280,7 +280,7 @@ header {
 
 .shopitem h2{
   color: rgba(0, 0, 0, 0.816);
-  font-size: 1.2rem;
+  font-size: 0.9rem;
 }
 
 .car-img2 {
@@ -297,44 +297,6 @@ header {
   object-fit: cover;
 }
 
-/* ===============================
-   HOVER LOGIC (FINAL & CORRECT)
-   =============================== */
-
-.menu:has(a.has-mega:hover) .mega-menu,
-.mega-menu:hover {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
-}
-
-.menu:has(a.has-mega2:hover) .mega-menu2,
-.mega-menu:hover {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
-}
-
-.menu:has(a.has-mega3:hover) .mega-menu3,
-.mega-menu:hover {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
-}
-
-.menu:has(a.has-mega4:hover) .mega-menu4,
-.mega-menu:hover {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
-}
-
-.menu:has(a.has-mega5:hover) .mega-menu5,
-.mega-menu:hover {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
-}
 
 /* ===============================
    LEFT SIDE (CARS)
@@ -360,7 +322,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 4rem;
+  gap: 2.5rem;
 }
 
 .car-2 {
@@ -368,7 +330,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 4rem;
+  gap: 2.5rem;
 }
 
 .car-3 {
@@ -376,7 +338,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 4rem;
+  gap: 2.5rem;
 }
 
 .car-4 {
@@ -384,7 +346,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 4rem;
+  gap: 2.5rem;
 }
 
 .car-img {
@@ -400,8 +362,10 @@ header {
 }
 
 .car-wrap h2 {
-  font-size: 1.1rem;
-  margin-top: 1.2rem;
+  font-weight: 600;
+  font-size: 0.94rem;
+  margin-top: 1.1rem;
+  color: rgba(0, 0, 0, 0.904);
 }
 
 .car-p {
@@ -409,13 +373,13 @@ header {
   justify-content: space-evenly;
   align-items: center;
 
-  margin-top: 0.56rem;
+  margin-top: 0.54rem;
   padding: 0 22px;
 
   font-size: 0.9rem;
   font-weight: 500;
   text-decoration: underline;
-  color: #000000e8;
+  color: #000000d3;
 }
 
 /* ===============================
@@ -443,15 +407,18 @@ ul {
 }
 
 li {
-  margin: 12px 0;
+  margin: 12px 5rem;
   width: 65%;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 600;
-  color: rgba(0, 0, 0, 0.877);
+  color: rgba(0, 0, 0, 0.849);
+  text-align: left;
+  white-space: nowrap;
 }
 
 li.ds {
   color: #000000b0;
+  margin-bottom: 1.8rem;
 }
 
 .mega-right a {
@@ -533,6 +500,12 @@ li.ds {
     }
   }
 }
+
+/* @media (max-height: 650px) {
+  header{
+    background-color: transparent;
+  }
+} */
 
 @media (max-width: 600px) {
   header {
@@ -835,10 +808,3 @@ input.placeholder {
     gap: 0;
   }
 }
-
-/* This has to be deactivated in future */
-/* @media (max-width: 1500px) {
-  .fixed-box {
-  display: none;
-  }
-} */

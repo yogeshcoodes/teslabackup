@@ -41,20 +41,15 @@
   position: absolute;
   top: 1.4rem;
   right: 1.4rem;
-
-  width: 3.2rem;
-  height: 3.2rem;
-
-  border-radius: 7px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-
-  background: #5e7279;
-  backdrop-filter: blur(6px);
-
+  border-radius: 4px;
+  border: none;
+  background: #5C5F61;
+  backdrop-filter: blur(2px);
   display: flex;
   align-items: center;
   justify-content: center;
-
+  height: 2.5rem;
+  width: 2.5rem;
   cursor: pointer;
 }
 
@@ -63,8 +58,8 @@
 }
 
 .video-btn svg {
-  width: 1.4rem;
-  height: 1.4rem;
+  width: 1.52rem;
+  height: 1.52rem;
   fill: #fff;
 }
 
@@ -100,10 +95,10 @@
   gap: 1.6rem;
 
   background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.55),
-    rgba(0, 0, 0, 0) 60%
-  );
+    to bottom,
+    rgba(0, 0, 0, 0.869),
+    rgba(0, 0, 0, 0.718) 10%,
+    transparent 40%);
 }
 
 .map-overlay h2 {

@@ -62,7 +62,7 @@
 .band {
   position: absolute;
   z-index: 10;
-  top: 30%;
+  top: 35%;
   width: 100%;
 
   display: flex;
