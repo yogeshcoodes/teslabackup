@@ -5,7 +5,7 @@
 header {
   position: fixed;
   top: 0;
-  z-index: 1000;
+  z-index: 2;
   height: 56px;
   width: 100%;
   background: #fff;
@@ -265,8 +265,7 @@ header {
 
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
   z-index: 999;
-    padding: 2rem 12.5rem;
-
+  padding: 2rem 12.5rem;
 }
 
 .shwrap {
@@ -278,7 +277,7 @@ header {
   /* outline: 2px solid black; */
 }
 
-.shopitem h2{
+.shopitem h2 {
   color: rgba(0, 0, 0, 0.816);
   font-size: 0.9rem;
 }
@@ -296,7 +295,6 @@ header {
   width: 100%;
   object-fit: cover;
 }
-
 
 /* ===============================
    LEFT SIDE (CARS)
@@ -509,7 +507,7 @@ li.ds {
 
 @media (max-width: 600px) {
   header {
-    position: sticky;
+    position: absolute;
     background: transparent;
   }
 
@@ -548,7 +546,7 @@ li.ds {
   height: 56px;
   background: #fff;
   border-top: 1px solid #e5e5e5;
-  z-index: 999;
+  z-index: 2;
 
   display: flex;
   align-items: center;
@@ -748,7 +746,8 @@ input.placeholder {
 
 @media (max-width: 600px) {
   .fixed-box {
-    padding: 6.5px 20px;
+    padding: 12px 20px;
+    height: 65px;
   }
   .fixed-inner {
     padding: 0 12px;
@@ -806,5 +805,108 @@ input.placeholder {
     justify-content: flex-start;
     padding: 0;
     gap: 0;
+  }
+}
+
+/* === MOBILE MENU FADE / SLIDE FIX (ONLY THIS) === */
+.mobilemenu {
+  /* DO NOT REMOVE YOUR EXISTING STYLES */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-16px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  position:inherit;
+  top: -1rem;
+  z-index: 5000;
+}
+
+.mobilemenu.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.mobilemenu {
+  display: flex;
+  position: relative;
+  z-index: 2;
+  height: 100dvh;
+  gap: 0.8rem;
+  display: none;
+  padding: 1rem 0rem;
+}
+.mitm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+} /* ONLY FOR MOBILE */
+@media (max-width: 600px) {
+  .menu-toggle {
+    display: flex;
+  }
+  .menuitm svg {
+    width: 24px;
+    height: 24px;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mobilemenu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #f5f3f1;
+    position: fixed;
+  }
+  .menuitm,
+  .menuitm c {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    flex-direction: row;
+  }
+  .menuitm h2,
+  .menuitm p,
+  .menuitm svg {
+    cursor: pointer;
+  }
+  .menuitm h2,
+  .menuitm p {
+    width: 100%;
+  }
+  .menuitm:last-child {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.6rem;
+  }
+  .menuitm h2 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #111;
+  }
+  .menuitm path {
+    width: 22px;
+    height: 22px;
+    display: block;
+    fill: #363636;
+  }
+  .menuitm path:hover {
+    fill: black;
+  }
+  .menuitm span {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .menuitm p {
+    font-size: 13px;
+    color: #555;
+  }
+  .menuitm:last-child {
+    border-bottom: none;
   }
 }
