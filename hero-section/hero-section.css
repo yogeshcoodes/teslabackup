@@ -35,7 +35,7 @@
 
 .model-info-top {
   position: absolute;
-  top: 15%;
+  top: 16%;
   width: 100%;
   text-align: center;
   display: flex;
@@ -169,7 +169,7 @@
     margin-top: -56px;
     margin-bottom: 8px;
     height: calc(72.58vh + 56px);
-    height: 90.5dvh;
+    height: 90vh;
   }
 
   .img-container img {

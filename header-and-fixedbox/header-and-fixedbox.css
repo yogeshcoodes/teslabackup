@@ -812,12 +812,13 @@ input.placeholder {
 .mobilemenu {
   /* DO NOT REMOVE YOUR EXISTING STYLES */
   opacity: 0;
+  height: 100vh;
   visibility: hidden;
   pointer-events: none;
   transform: translateY(-16px);
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
   position:inherit;
-  top: -1rem;
+  top: 0rem;
   z-index: 5000;
 }
 
