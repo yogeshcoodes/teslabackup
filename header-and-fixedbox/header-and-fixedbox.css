@@ -817,9 +817,8 @@ input.placeholder {
   pointer-events: none;
   transform: translateY(-16px);
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-  position:inherit;
+  position:relative;
   top: 0rem;
-  z-index: 5000;
 }
 
 .mobilemenu.active {
@@ -832,7 +831,7 @@ input.placeholder {
   display: flex;
   position: relative;
   z-index: 2;
-  height: 100dvh;
+  height: 100vh;
   gap: 0.8rem;
   display: none;
   padding: 1rem 0rem;
@@ -859,7 +858,8 @@ input.placeholder {
     display: flex;
     flex-direction: column;
     width: 100%;
-    background: #f5f3f1;
+    height: 100%;
+    background: #ffffff;
     position: fixed;
   }
   .menuitm,
